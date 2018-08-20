@@ -99,20 +99,20 @@ export const AuthenticationService = new AuthService()
 
 export const request = (path, method = 'get', body = null) => {
 
-  const token = localStorage.getItem('token')
-
+  // const token = localStorage.getItem('token')
+  console.log(process.env)
   return axios(`${process.env.REACT_APP_BACKEND}${path}`, {
     method: method,
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'Authorization': token ? `Bearer ${token}` : ''
+      // 'Accept': 'application/json',
+      // 'Authorization': token ? `Bearer ${token}` : ''
     },
     data: body
   })
   .catch(error => {
     if(error.response.status === 401){
-      AuthenticationService.setAuthState(null)
+      // AuthenticationService.setAuthState(null)
     }
     return Promise.reject(error)
   })
