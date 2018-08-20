@@ -16,8 +16,15 @@ class TopNav extends React.Component{
     super(props);
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      clickCount: 0
     };
+  }
+
+  click(){
+    this.setState({
+      clickCount: this.state.clickCount+1
+    })
   }
 
   toggle() {
@@ -29,7 +36,7 @@ class TopNav extends React.Component{
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">BuiltyBy</NavbarBrand>
+          <NavbarBrand onClick={this.click} >BuiltBy</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
