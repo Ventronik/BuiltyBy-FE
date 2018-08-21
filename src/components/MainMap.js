@@ -51,10 +51,11 @@ class MainMap extends React.Component{
   }
 
   getProjectsData = () =>{
-    request(`/`)
-    // .then(projects => {
-      // console.log(projects)
-    // })
+    request()
+    .then(projects => {
+      this.setState({projects:JSON.parse(projects.data.replace(/\bNaN\b/g, 'null'))})
+      console.log(this.state.projects)
+    })
   }
 
   render() {
