@@ -97,7 +97,7 @@ export const AuthenticationService = new AuthService()
 ////////////////////////////////////////////////////////////////////
 /// request ////////////////////////////////////////////////////////
 
-export const request = (path, method = 'get', body = null) => {
+export const request = (path = '/', method = 'get', body = null) => {
 
   // const token = localStorage.getItem('token')
   console.log(process.env)
@@ -105,7 +105,7 @@ export const request = (path, method = 'get', body = null) => {
     method: method,
     headers: {
       'Content-Type': 'application/json',
-      // 'Accept': 'application/json',
+      'Accept': 'application/json',
       // 'Authorization': token ? `Bearer ${token}` : ''
     },
     data: body
