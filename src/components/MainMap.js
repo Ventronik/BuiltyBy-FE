@@ -2,6 +2,7 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 // import MapMarkers from './MapMarkers';
 import MyGreatPlace from './Marker.js';
+import MapNav from './MapNav.js';
 // import PropTypes from 'prop-types';
 import { request } from '../helpers/index';
 
@@ -37,6 +38,7 @@ class MainMap extends React.Component{
     let markers = this.state.projects.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />)
     return (
       <div style={{ height: '92vh', width: '100%' }}>
+        <MapNav />
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyC7V5C9L6LbW9TKDKYSuYXKuXYYaORJrD0' }}
           defaultCenter={this.props.center}
