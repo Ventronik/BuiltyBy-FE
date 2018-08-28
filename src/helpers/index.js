@@ -111,9 +111,10 @@ export const request = (path = '/', method = 'get', body = null) => {
     data: body
   })
   .catch(error => {
-    if(error.response.status === 401){
+    console.log(error.response)
+    // if(error.response.status === 401){
       // AuthenticationService.setAuthState(null)
-    }
+    // }
     return Promise.reject(error)
   })
 }
