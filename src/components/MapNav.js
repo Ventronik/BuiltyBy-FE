@@ -11,7 +11,7 @@ import {Collapse,
         DropdownMenu,
         DropdownItem } from 'reactstrap';
 
-class TopNav extends React.Component{
+class MapNav extends React.Component{
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -24,7 +24,7 @@ class TopNav extends React.Component{
   click(){
     this.setState({
       clickCount: this.state.clickCount+1
-    });
+    })
   }
 
   toggle() {
@@ -36,33 +36,27 @@ class TopNav extends React.Component{
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand onClick={this.click} >BuiltBy</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="ml-auto" navbar tabs>
               <NavItem>
-                <NavLink href="/components/">Login</NavLink>
+                <NavLink href="/new" active>Permits With Coming Design Reviews</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">GitHub</NavLink>
+                <NavLink href="/permits/landuse">Land Use</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="/permits/building">Building</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/permits/electrical">Electrical</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/permits/trade">Trade</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/companies">Companies</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
@@ -71,4 +65,4 @@ class TopNav extends React.Component{
   }
 }
 
-export default TopNav;
+export default MapNav;
