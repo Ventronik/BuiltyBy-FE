@@ -54,9 +54,6 @@ class MapNav extends React.Component{
               <NavItem>
                 <NavLink href="/permits/trade">Trade</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="/companies">Companies</NavLink>
-              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
