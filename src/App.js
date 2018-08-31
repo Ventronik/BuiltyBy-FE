@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 // import { Button } from 'reactstrap';
 import TopNav from './components/TopNav';
-import MainMap from './components/MainMap'
+import MainMap from './components/MainMap';
 
 class App extends Component {
 
