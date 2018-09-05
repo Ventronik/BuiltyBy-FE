@@ -1,10 +1,13 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { designReviewMarkers } from '../actions'
 // import MapMarkers from './MapMarkers';
 import MyGreatPlace from './Marker.js';
 import MapNav from './MapNav.js';
 // import PropTypes from 'prop-types';
-import { request } from '../helpers/index';
+// import { request } from '../helpers/index';
 
 class MainMap extends React.Component{
   constructor(props){
@@ -23,19 +26,12 @@ class MainMap extends React.Component{
   }
 
   componentDidMount(){
-    this.getProjectsData()
-  }
-
-  getProjectsData = () =>{
-    request('/new')
-    .then(projects => {
-      this.setState({projects: projects.data})
-      console.log(this.state.projects)
-    })
+    this.props.designReviewMarkers()
   }
 
   render() {
-    let markers = this.state.projects.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />)
+    let markers = [];
+    this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />) : null
     return (
       <div style={{ height: '92vh', width: '100%' }}>
         <MapNav />
@@ -52,4 +48,15 @@ class MainMap extends React.Component{
   }
 }
 
-export default MainMap;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  designReviewMarkers,
+}, dispatch)
+
+const mapStateToProps = ( { mapMarkers } ) => {
+  return { mapMarkers }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainMap);
