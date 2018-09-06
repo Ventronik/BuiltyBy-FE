@@ -32,6 +32,12 @@ class MapNav extends React.Component{
       isOpen: !this.state.isOpen
     });
   }
+
+  landuse() {
+    // this.preventDefault()
+    this.props.landUseMarkers()
+  }
+
   render() {
     return (
       <div>
@@ -43,7 +49,7 @@ class MapNav extends React.Component{
                 <NavLink href="/new" active>Permits With Coming Design Reviews</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/permits/landuse">Land Use</NavLink>
+                <NavLink onClick={()=>this.props.landUseMarkers()}>Land Use</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/permits/building">Building</NavLink>

@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { designReviewMarkers } from '../actions'
+import { designReviewMarkers, landUseMarkers } from '../actions'
 // import MapMarkers from './MapMarkers';
 import MyGreatPlace from './Marker.js';
 import MapNav from './MapNav.js';
@@ -34,7 +34,7 @@ class MainMap extends React.Component{
     this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />) : null
     return (
       <div style={{ height: '92vh', width: '100%' }}>
-        <MapNav />
+        <MapNav landUseMarkers={this.props.landUseMarkers}/>
         <GoogleMapReact
           bootstrapURLKeys={{ key: '***REMOVED***' }}
           defaultCenter={this.props.center}
@@ -50,6 +50,7 @@ class MainMap extends React.Component{
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   designReviewMarkers,
+  landUseMarkers
 }, dispatch)
 
 const mapStateToProps = ( { mapMarkers } ) => {
