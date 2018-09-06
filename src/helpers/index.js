@@ -97,19 +97,20 @@ export const AuthenticationService = new AuthService()
 ////////////////////////////////////////////////////////////////////
 /// request ////////////////////////////////////////////////////////
 
-export const request = (path = '/', method = 'get', body = null) => {
-
-  // const token = localStorage.getItem('token')
-  console.log(process.env)
-  return axios(`${process.env.REACT_APP_BACKEND}${path}`, {
+export const request = (path = '/', method = 'get', data = null) => {
+  const options = {
     method: method,
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       // 'Authorization': token ? `Bearer ${token}` : ''
-    },
-    data: body
-  })
+    }
+  }
+
+  if (data) options.data = data
+  // const token = localStorage.getItem('token')
+  console.log(process.env)
+  return axios(`${process.env.REACT_APP_BACKEND}${path}`, options)
   .catch(error => {
     console.log(error)
     // if(error.response.status === 401){
