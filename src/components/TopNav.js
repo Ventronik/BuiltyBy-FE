@@ -35,34 +35,34 @@ class TopNav extends React.Component{
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand onClick={this.click} >BuiltBy</NavbarBrand>
+        <Navbar id="topnav" expand="md">
+          <NavbarBrand id="brand" onClick={this.click} ><h1>BuiltBy</h1></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Login</NavLink>
+                <NavLink id="toplink" href="/components/">GitHub</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">GitHub</NavLink>
+                <NavLink id="toplink" href="">LogIn</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+              {/* <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle id="toplink" nav caret>
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
+                  <DropdownItem id="toplink">
                     Option 1
                   </DropdownItem>
-                  <DropdownItem>
+                  <DropdownItem id="toplink">
                     Option 2
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>
+                  <DropdownItem id="toplink">
                     Reset
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>
