@@ -33,36 +33,55 @@ class MapNav extends React.Component{
     });
   }
 
-  landuse() {
-    // this.preventDefault()
-    this.props.landUseMarkers()
-  }
-
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
+      <div className="justify-content-end">
+        {/* <Navbar className='mapNav' light expand="md">
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar tabs>
               <NavItem>
-                <NavLink href="/new" active>Permits With Coming Design Reviews</NavLink>
+                <NavLink href="/new">Permits With Coming Design Reviews</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink onClick={()=>this.props.landUseMarkers()}>Land Use</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/permits/building">Building</NavLink>
+                <NavLink onClick={()=>this.props.buildingMarkers()}>Building</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/permits/electrical">Electrical</NavLink>
+                <NavLink onClick={()=>this.props.electricalPermitsMarkers()}>Electrical</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/permits/trade">Trade</NavLink>
+                <NavLink onClick={()=>this.props.tradeMarkers()}>Trade</NavLink>
               </NavItem>
             </Nav>
-          </Collapse>
-        </Navbar>
+        </Navbar> */}
+
+        <nav className="navbar navbar-expand-lg">
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto justify-content-end">
+              <li className="nav-item active">
+                <a className="nav-link" href="#">Permits With Coming Design Reviews <span class="sr-only">(current)</span></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.props.landUseMarkers()}>Land Use</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.props.buildingMarkers()}>Building</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.props.electricalPermitsMarkers()}>Electrical</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#" onClick={()=>this.props.tradeMarkers()}>Trade</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     )
   }

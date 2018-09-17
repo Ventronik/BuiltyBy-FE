@@ -109,10 +109,8 @@ export const request = (path = '/', method = 'get', data = null) => {
 
   if (data) options.data = data
   // const token = localStorage.getItem('token')
-  console.log(process.env)
-  return axios(`${process.env.REACT_APP_BACKEND}${path}`, options)
+  return axios(`${process.env.REACT_APP_BACKEND}${path}?%24limit=100`, options)
   .catch(error => {
-    console.log(error)
     // if(error.response.status === 401){
       // AuthenticationService.setAuthState(null)
     // }
