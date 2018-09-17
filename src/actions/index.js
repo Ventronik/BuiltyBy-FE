@@ -15,6 +15,7 @@ export const designReviewMarkers = marker => {
       type: DESIGN_REVIEW_MARKERS,
       payload: markers.data
     }))
+    .catch(console.error)
   }
 }
 
