@@ -12,7 +12,7 @@ const initialState = []
 export default (state = initialState, action) => {
   switch (action.type) {
     case DESIGN_REVIEW_MARKERS:
-      return [...state, ...action.payload]
+      return [ ...action.payload]
     case LAND_USE_MARKERS:
       return [ ...action.payload]
     case BUILDING_MARKERS:

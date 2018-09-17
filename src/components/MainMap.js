@@ -41,6 +41,7 @@ class MainMap extends React.Component{
     return (
       <div style={{ height: '92vh', width: '100%' }}>
         <MapNav
+          designReviewMarkers={this.props.designReviewMarkers}
           landUseMarkers={this.props.landUseMarkers}
           buildingMarkers={this.props.buildingMarkers}
           electricalPermitsMarkers={this.props.electricalPermitsMarkers}
