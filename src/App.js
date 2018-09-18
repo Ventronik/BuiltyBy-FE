@@ -1,7 +1,6 @@
 // import Reactotron from 'reactotron-react-js';
 import React, { Component } from 'react';
 import './App.css';
-// import { Button } from 'reactstrap';
 import TopNav from './components/TopNav';
 import MainMap from './components/MainMap';
 

@@ -12,8 +12,6 @@ import { designReviewMarkers,
 // import MapMarkers from './MapMarkers';
 import MyGreatPlace from './Marker.js';
 import MapNav from './MapNav.js';
-// import PropTypes from 'prop-types';
-// import { request } from '../helpers/index';
 
 class MainMap extends React.Component{
   constructor(props){
@@ -39,7 +37,7 @@ class MainMap extends React.Component{
     let markers = [];
     this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />) : null
     return (
-      <div style={{ height: '92vh', width: '100%' }}>
+      <div style={{ height: 'calc(100vh - 138px)', width: '100%' }}>
         <MapNav
           designReviewMarkers={this.props.designReviewMarkers}
           landUseMarkers={this.props.landUseMarkers}
