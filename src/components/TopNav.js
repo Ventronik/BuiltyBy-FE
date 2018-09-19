@@ -35,7 +35,7 @@ class TopNav extends React.Component{
   render() {
     return (
       <div>
-        <Navbar id="topnav" expand="md">
+        <Navbar  id="topnav" expand="md">
           <NavbarBrand id="brand" onClick={this.click} ><h1>BuiltBy</h1></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

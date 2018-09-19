@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #222;
   height: 150px;
@@ -184,4 +179,13 @@
 #toplink {
   color: #f2f3f2;
   background-color: #5970af;
+}
+
+.mapRow {
+  height: 100%;
+}
+
+.scroll {
+  max-height: calc(100vh - 140px);
+  overflow-y: scroll;
 }

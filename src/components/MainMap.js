@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { designReviewMarkers,
+import {  designReviewMarkers,
           landUseMarkers,
           buildingMarkers,
           electricalPermitsMarkers,
@@ -12,6 +12,8 @@ import { designReviewMarkers,
 // import MapMarkers from './MapMarkers';
 import MyGreatPlace from './Marker.js';
 import MapNav from './MapNav.js';
+import Map from './Map.js';
+import MapDataSideBar from './MapDataSideBar';
 
 class MainMap extends React.Component{
   constructor(props){
@@ -37,7 +39,7 @@ class MainMap extends React.Component{
     let markers = [];
     this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />) : null
     return (
-      <div style={{ height: 'calc(100vh - 138px)', width: '100%' }}>
+      <div>
         <MapNav
           designReviewMarkers={this.props.designReviewMarkers}
           landUseMarkers={this.props.landUseMarkers}
@@ -46,14 +48,22 @@ class MainMap extends React.Component{
           tradeMarkers={this.props.tradeMarkers}
           companyMarkers={this.props.companyMarkers}
         />
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: '***REMOVED***' }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          {markers}
-
-        </GoogleMapReact>
+        <div className="container-fluid">
+          {/* <div className ="row"> */}
+            {/* <div className="col"> */}
+            {/* </div> */}
+          {/* </div> */}
+          <div>
+            <div className="row mapRow">
+              <div className="col-6 fixed-bottom">
+                <Map />
+              </div>
+              <div className="col-6 offset-6 scroll">
+                <MapDataSideBar />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
