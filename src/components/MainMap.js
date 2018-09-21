@@ -49,18 +49,10 @@ class MainMap extends React.Component{
           companyMarkers={this.props.companyMarkers}
         />
         <div className="container-fluid">
-          {/* <div className ="row"> */}
-            {/* <div className="col"> */}
-            {/* </div> */}
-          {/* </div> */}
           <div>
             <div className="row mapRow">
-              <div className="col-6 fixed-bottom">
-                <Map />
-              </div>
-              <div className="col-6 offset-6 scroll">
-                <MapDataSideBar />
-              </div>
+              <Map />
+              <MapDataSideBar />
             </div>
           </div>
         </div>
