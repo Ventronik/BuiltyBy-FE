@@ -11,15 +11,18 @@ class MapDataSideBar extends React.Component{
     }
   }
   render() {
+    let cards= [];
+    this.props.mapMarkers ? cards = this.props.mapMarkers.map((marker, i)=> <DataSideBarCard key={i.toString()} markers={marker}/>) : null;
     return (
-      <div className="scroll">
-        <DataSideBarCard />
-        <DataSideBarCard />
-        <DataSideBarCard />
-        <DataSideBarCard />
+      <div className="col-4 scroll">
+        {cards}
       </div>
     )
   }
 }
 
-export default MapDataSideBar;
+const mapStateToProps = ( { mapMarkers } ) => {
+  return { mapMarkers }
+}
+
+export default connect(mapStateToProps)(MapDataSideBar);

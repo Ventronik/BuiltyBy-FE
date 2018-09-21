@@ -36,7 +36,7 @@ class Map extends React.Component{
     let markers = [];
     this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />) : null
     return (
-      <div style={{ height: 'calc(100vh - 138px)', width: '100%' }}>
+      <div className="col-8" style={{ height: 'calc(100vh - 138px)', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: '***REMOVED***' }}
           defaultCenter={this.props.center}
