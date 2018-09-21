@@ -1,15 +1,4 @@
 import React from 'react';
-import {Collapse,
-        Navbar,
-        NavbarBrand,
-        NavbarToggler,
-        Nav,
-        NavItem,
-        NavLink,
-        UncontrolledDropdown,
-        DropdownToggle,
-        DropdownMenu,
-        DropdownItem } from 'reactstrap';
 
 class MapNav extends React.Component{
   constructor(props) {
