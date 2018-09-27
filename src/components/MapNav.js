@@ -32,7 +32,7 @@ class MapNav extends React.Component{
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto justify-content-end">
               <li className={`nav-item ${this.state.activeButton ===  'Permits' ? 'active' : null}`}>
-                <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Permits', this.props.designReviewMarkers)}>Permits With Coming Design Reviews <span class="sr-only">(current)</span></a>
+                <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Permits', this.props.designReviewMarkers)}>Permits With Coming Design Reviews <span className="sr-only">(current)</span></a>
               </li>
               <li className={`nav-item ${this.state.activeButton ===  'Landuse' ? 'active' : null}`}>
                 <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Landuse', this.props.landUseMarkers)}>Land Use</a>

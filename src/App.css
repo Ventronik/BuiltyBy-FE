@@ -189,3 +189,7 @@
   max-height: calc(100vh - 140px);
   overflow-y: scroll;
 }
+
+#beta {
+  font-size: 12px;
+}
