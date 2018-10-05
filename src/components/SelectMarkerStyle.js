@@ -1,13 +1,14 @@
 
-const K_WIDTH = 40;
-const K_HEIGHT = 40;
+const K_WIDTH = 60;
+const K_HEIGHT = 60;
 
-const MarkerStyle = {
+const SelectedMarkerStyle = {
   // initially any map object has left top corner at lat lng coordinates
   // it's on you to set object origin to 0,0 coordinates
   position: 'absolute',
   width: K_WIDTH,
   height: K_HEIGHT,
+  // lineHeight: K_HEIGHT,
   left: -K_WIDTH / 2,
   top: -K_HEIGHT / 2,
   display: 'flex',
@@ -20,9 +21,9 @@ const MarkerStyle = {
   backgroundColor: '#5970AF',
   textAlign: 'center',
   color: '#F2F3F2',
-  fontSize: 16,
+  fontSize: 24,
   fontWeight: 'bold',
   padding: 4
 };
 
-export {MarkerStyle};
+export {SelectedMarkerStyle};

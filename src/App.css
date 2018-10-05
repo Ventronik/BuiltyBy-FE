@@ -193,3 +193,7 @@
 #beta {
   font-size: 12px;
 }
+
+.selectedMarker{
+  font-size: 40px;
+}

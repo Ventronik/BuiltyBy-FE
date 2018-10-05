@@ -33,8 +33,9 @@ class Map extends React.Component{
   }
 
   render() {
+
     let markers = [];
-    this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />) : null
+    this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} activePermit={this.props.activePermit} setSelectedPermit={this.props.setSelectedPermit}/>) : null
     return (
       <div className="col-8" style={{ height: 'calc(100vh - 138px)', width: '100%' }}>
         <GoogleMapReact
