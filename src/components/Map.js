@@ -16,32 +16,39 @@ class Map extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      projects: []
+      center: [47.60, -122.33],
+      zoom: 11
     }
-  }
-
-  static defaultProps = {
-    center: {
-      lat: 47.60,
-      lng: -122.33
-    },
-    zoom: 11
   }
 
   componentDidMount(){
     this.props.designReviewMarkers()
   }
 
-  render() {
+  componentDidUpdate(){
+    let centerData = (this.props.mapMarkers[(this.props.activePermit - 1)]);
+    let center =[centerData.latitude, centerData.longitude]
+    if(this.state.center[0] !== center[0] && this.state.center[1] !== center[1] ) this.setState({center: center})
+  }
 
+  render() {
     let markers = [];
-    this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} activePermit={this.props.activePermit} setSelectedPermit={this.props.setSelectedPermit}/>) : null
+    this.props.mapMarkers ?
+      markers = this.props.mapMarkers.map((marker, i)=>
+          <MyGreatPlace
+            key={i.toString()}
+            lat={marker.latitude}
+            lng={marker.longitude}
+            text={i.toString()}
+            activePermit={this.props.activePermit}
+            setSelectedPermit={this.props.setSelectedPermit}/>)
+          : null
     return (
       <div className="col-8" style={{ height: 'calc(100vh - 138px)', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: '***REMOVED***' }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          center={this.state.center}
+          zoom={this.state.zoom}
         >
           {markers}
 
