@@ -3,16 +3,13 @@ import { connect } from 'react-redux';
 import DataSideBarCard from './DataSideBarCard';
 
 class MapDataSideBar extends React.Component{
-  constructor(props){
-    super(props)
+  // constructor(props){
+    // super(props)
     // this.state = {
-    //   refs: []
-    // }
-  }
+  // }
 
   render() {
-    let cards= [];
-    this.props.mapMarkers ? cards = this.props.mapMarkers.map((marker, i)=> {
+    let cards= this.props.mapMarkers ? this.props.mapMarkers.map((marker, i)=> {
       return <DataSideBarCard key={i.toString()} keyData={i+1} markers={marker} activePermit={this.props.activePermit} setSelectedPermit={this.props.setSelectedPermit}/>
     }) : null;
     return (

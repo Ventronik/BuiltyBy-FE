@@ -2,15 +2,9 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { designReviewMarkers,
-          landUseMarkers,
-          buildingMarkers,
-          electricalPermitsMarkers,
-          tradeMarkers,
-          companyMarkers
+import { designReviewMarkers
         } from '../actions'
 import MyGreatPlace from './Marker.js';
-import MapNav from './MapNav.js';
 
 class Map extends React.Component{
   constructor(props){
@@ -32,9 +26,8 @@ class Map extends React.Component{
   }
 
   render() {
-    let markers = [];
-    this.props.mapMarkers ?
-      markers = this.props.mapMarkers.map((marker, i)=>
+    let markers = this.props.mapMarkers ?
+      this.props.mapMarkers.map((marker, i)=>
           <MyGreatPlace
             key={i.toString()}
             lat={marker.latitude}

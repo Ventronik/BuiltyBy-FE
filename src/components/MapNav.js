@@ -32,19 +32,19 @@ class MapNav extends React.Component{
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto justify-content-end">
               <li className={`nav-item ${this.state.activeButton ===  'Permits' ? 'active' : null}`}>
-                <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Permits', this.props.designReviewMarkers)}>Permits With Coming Design Reviews <span className="sr-only">(current)</span></a>
+                <a className="nav-link" onClick={()=>this.setActiveButton('Permits', this.props.designReviewMarkers)}>Permits With Coming Design Reviews <span className="sr-only">(current)</span></a>
               </li>
               <li className={`nav-item ${this.state.activeButton ===  'Landuse' ? 'active' : null}`}>
-                <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Landuse', this.props.landUseMarkers)}>Land Use</a>
+                <a className="nav-link" onClick={()=>this.setActiveButton('Landuse', this.props.landUseMarkers)}>Land Use</a>
               </li>
               <li className={`nav-item ${this.state.activeButton ===  'Building' ? 'active' : null}`}>
-                <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Building', this.props.buildingMarkers)}>Building</a>
+                <a className="nav-link" onClick={()=>this.setActiveButton('Building', this.props.buildingMarkers)}>Building</a>
               </li>
               <li className={`nav-item ${this.state.activeButton ===  'Electrical' ? 'active' : null}`}>
-                <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Electrical', this.props.electricalPermitsMarkers)}>Electrical</a>
+                <a className="nav-link" onClick={()=>this.setActiveButton('Electrical', this.props.electricalPermitsMarkers)}>Electrical</a>
               </li>
               <li className={`nav-item ${this.state.activeButton ===  'Trade' ? 'active' : null}`}>
-                <a className="nav-link" href="#" onClick={()=>this.setActiveButton('Trade', this.props.tradeMarkers)}>Trade</a>
+                <a className="nav-link" onClick={()=>this.setActiveButton('Trade', this.props.tradeMarkers)}>Trade</a>
               </li>
             </ul>
           </div>
