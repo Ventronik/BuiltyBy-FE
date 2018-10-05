@@ -18,7 +18,8 @@ class MainMap extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      projects: []
+      projects: [],
+      activePermit: 1
     }
   }
 
@@ -32,6 +33,12 @@ class MainMap extends React.Component{
 
   componentDidMount(){
     this.props.designReviewMarkers()
+  }
+
+  setSelectedPermit = (permitId) => {
+    this.setState({
+      activePermit: permitId
+    });
   }
 
   render() {
@@ -50,8 +57,8 @@ class MainMap extends React.Component{
         <div className="container-fluid">
           <div>
             <div className="row mapRow">
-              <Map />
-              <MapDataSideBar />
+              <Map activePermit={this.state.activePermit} setSelectedPermit={this.setSelectedPermit}/>
+              <MapDataSideBar activePermit={this.state.activePermit} setSelectedPermit={this.setSelectedPermit}/>
             </div>
           </div>
         </div>

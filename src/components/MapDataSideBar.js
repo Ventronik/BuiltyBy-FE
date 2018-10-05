@@ -5,13 +5,16 @@ import DataSideBarCard from './DataSideBarCard';
 class MapDataSideBar extends React.Component{
   constructor(props){
     super(props)
-    this.state ={
-      projects: []
-    }
+    // this.state = {
+    //   refs: []
+    // }
   }
+
   render() {
     let cards= [];
-    this.props.mapMarkers ? cards = this.props.mapMarkers.map((marker, i)=> <DataSideBarCard key={i.toString()} markers={marker}/>) : null;
+    this.props.mapMarkers ? cards = this.props.mapMarkers.map((marker, i)=> {
+      return <DataSideBarCard key={i.toString()} keyData={i+1} markers={marker} activePermit={this.props.activePermit} setSelectedPermit={this.props.setSelectedPermit}/>
+    }) : null;
     return (
       <div className="col-4 scroll">
         {cards}
