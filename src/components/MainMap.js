@@ -8,8 +8,6 @@ import {  designReviewMarkers,
           tradeMarkers,
           companyMarkers
         } from '../actions'
-// import MapMarkers from './MapMarkers';
-import MyGreatPlace from './Marker.js';
 import MapNav from './MapNav.js';
 import Map from './Map.js';
 import MapDataSideBar from './MapDataSideBar';
@@ -42,8 +40,6 @@ class MainMap extends React.Component{
   }
 
   render() {
-    let markers = [];
-    this.props.mapMarkers ? markers = this.props.mapMarkers.map((marker, i)=> <MyGreatPlace key={i.toString()} lat={marker.latitude} lng={marker.longitude} text={i.toString()} />) : null
     return (
       <div>
         <MapNav

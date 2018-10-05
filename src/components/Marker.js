@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 // import shouldPureComponentUpdate from 'react-pure-render/function';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+// import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import {MarkerStyle} from './MarkerStyle.js';
 import {SelectedMarkerStyle} from './SelectMarkerStyle.js';
@@ -22,7 +22,7 @@ export default class MyGreatPlace extends Component {
   static defaultProps = {};
 
   permitSelector = () => {
-    this.props.setSelectedPermit(parseInt(this.props.text)+1)
+    this.props.setSelectedPermit(parseInt(this.props.text, 10)+1)
   }
 
   // shouldComponentUpdate = shouldPureComponentUpdate;
@@ -30,9 +30,9 @@ export default class MyGreatPlace extends Component {
   render() {
     return (
       <div>
-          { !(parseInt(this.props.text) + 1 === this.props.activePermit) ?
-            <div style={MarkerStyle} onClick={()=>this.permitSelector()}>{parseInt(this.props.text) + 1}</div>  :
-            <div className="align-middle" style={SelectedMarkerStyle} onClick={() => this.props.setSelectedPermit(null)}>{parseInt(this.props.text) + 1}</div>
+          { !(parseInt(this.props.text, 10) + 1 === this.props.activePermit) ?
+            <div style={MarkerStyle} onClick={()=>this.permitSelector()}>{parseInt(this.props.text, 10) + 1}</div>  :
+            <div className="align-middle" style={SelectedMarkerStyle} onClick={() => this.props.setSelectedPermit(null)}>{parseInt(this.props.text,10) + 1}</div>
           }
       </div>
     );
