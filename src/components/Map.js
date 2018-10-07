@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { designReviewMarkers
         } from '../actions'
 import MyGreatPlace from './Marker.js';
+import config from '../config';
 
 class Map extends React.Component{
   constructor(props){
@@ -39,7 +40,7 @@ class Map extends React.Component{
     return (
       <div className="col-8" style={{ height: 'calc(100vh - 138px)', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: '***REMOVED***' }}
+          bootstrapURLKeys={{ key: config.API_KEY }}
           center={this.state.center}
           zoom={this.state.zoom}
         >
